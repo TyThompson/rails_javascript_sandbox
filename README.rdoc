@@ -1,4 +1,4 @@
 == How to begin
-Launch the rails server using command "rails s"
-Go to http://localhost:3000/sandbox/twitter
-Added counter to play with
+* Launch the rails server using command "rails s"
+* Go to http://localhost:3000/sandbox/twitter
+* Added counter to play with
