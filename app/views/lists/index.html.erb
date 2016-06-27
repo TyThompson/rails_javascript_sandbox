@@ -1,0 +1,24 @@
+<h2>Your Lists</h2>
+<!-- <a href="/lists/new">Add a List</a> -->
+<!-- <%= link_to "Add a List", "/lists/new" %> -->
+<%= link_to "Add a List", new_list_path %>
+
+<ul>
+  <% @lists.each do |list| %>
+    <li>
+      <%= link_to list.title, list %>
+      <!-- <form method="POST" action="/lists/<%= list.id %>">
+        <input name="_method" type="hidden" value="DELETE">
+        need CSRF token -->
+
+      <!-- Take 1: writing a form directly -->
+      <!-- <%= form_tag "/lists/#{list.id}", method: :delete do %>
+        <button>X</button>
+      <% end %> -->
+
+      <!-- <%= button_to "X", "/lists/#{list.id}", method: :delete %> -->
+
+      <%= link_to "X", list, method: :delete %>
+    </li>
+  <% end %>
+</ul>

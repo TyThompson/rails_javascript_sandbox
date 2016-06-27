@@ -1,0 +1,5 @@
+<%= bootstrap_form_for [@list, @item] do |f| %>
+  <%= f.text_field :description %>
+  <%= f.date_field :due_date %>
+  <button class="btn btn-primary">Save</button>
+<% end %>

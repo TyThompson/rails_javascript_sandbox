@@ -1,0 +1,42 @@
+<%= link_to "Show all", "/lists", class: "btn btn-default" %>
+<% if policy(@list).add_items? %>
+  <%= link_to "New item", new_list_item_path(@list), class: "btn btn-default" %>
+<% end %>
+
+<h2>
+  <%= @list.title %>
+  <span class="badge"><%= @list.items.count %></span>
+</h2>
+
+<table class="table table-hover table-striped table-condensed">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Description</th>
+      <th>Due</th>
+      <th>Buttons</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @list.items.each do |item| %>
+      <tr>
+        <td>
+          <span class="test" foo="bar" data-foo="<%= item.id %>">
+            <%= item.id %>
+          </span>
+        </td>
+        <td><%= item.description %></td>
+        <td><%= item.due_date %></td>
+        <td>
+          <% if policy(item).edit? %>
+            <%= link_to "Edit", edit_item_path(item), class: "btn btn-default btn-xs" %>
+          <% end %>
+
+          <a href="#" class="btn btn-default btn-xs js-btn" data-item-id="<%= item.id %>">
+            Edit with Javascript
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
