@@ -32,7 +32,7 @@ $(document).ready(function() {
     var old_count = count
     var d = new Date();
     var n = d.toLocaleTimeString();
-    $("#new-counter ul").append("<BR>reset from " + old_count + " on " + n)
+    $("#new-counter ul").prepend("<BR>reset from " + old_count + " on " + n)
     count = 0
     $("#new-counter p").text( count ).css("color","black")
   })
