@@ -1,5 +1,8 @@
-var maxlength = 180
+//counter variables
 var count = 0
+
+//twitter variables
+var maxlength = 180
 
 var computeLetterCount = function() {
   var contents = $("#tweet-contents")
@@ -10,10 +13,15 @@ var computeLetterCount = function() {
 }
 
 $(document).ready(function() {
-  $("#tweet-contents").attr("maxlength", maxlength)
+//counter
+  $("#new-counter p").text( count )
   $("#add-counter").click(function() {
     console.log("Clicked Add")
     $("#new-counter p").text( (count += 1 ))
+    if (count > 10){
+      console.log('greater than 10!')
+      $("#new-counter p").css("color","red");
+    }
   })
   $("#sub-counter").click(function() {
     console.log("Clicked Subtract")
@@ -21,9 +29,19 @@ $(document).ready(function() {
   })
   $("#reset-counter").click(function() {
     console.log("Clicked Reset")
-    var count = 0
-    $("#new-counter p").text( count )
+    var old_count = count
+    var d = new Date();
+    var n = d.toLocaleTimeString();
+    $("#new-counter ul").append("<BR>reset from " + old_count + " on " + n)
+    count = 0
+    $("#new-counter p").text( count ).css("color","black")
   })
+  $("#clear-list").click(function() {
+    console.log("Clicked Clear List")
+    $("ul").empty()
+  })
+//twitter
+  $("#tweet-contents").attr("maxlength", maxlength)
   $("#save-tweet").click(function() {
     console.log("clicked btn")
 
