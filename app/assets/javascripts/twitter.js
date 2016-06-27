@@ -1,4 +1,5 @@
 var maxlength = 180
+var count = 0
 
 var computeLetterCount = function() {
   var contents = $("#tweet-contents")
@@ -9,19 +10,19 @@ var computeLetterCount = function() {
 }
 
 $(document).ready(function() {
-
   $("#tweet-contents").attr("maxlength", maxlength)
   $("#add-counter").click(function() {
     console.log("Clicked Add")
-
+    $("#new-counter p").text( (count += 1 ))
   })
   $("#sub-counter").click(function() {
     console.log("Clicked Subtract")
-
+    $("#new-counter p").text( (count -= 1 ))
   })
   $("#reset-counter").click(function() {
     console.log("Clicked Reset")
-
+    var count = 0
+    $("#new-counter p").text( count )
   })
   $("#save-tweet").click(function() {
     console.log("clicked btn")

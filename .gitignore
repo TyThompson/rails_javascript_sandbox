@@ -16,3 +16,5 @@ log/development.log
 *.cache
 
 tmp/cache/assets/sprockets/v3.0/OV/OVZvkDFVsOcPcFlHmMriHtHSI4sswuD8aqSH7Z7SlsU.cache
+
+*.cache
