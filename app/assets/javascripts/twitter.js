@@ -11,7 +11,18 @@ var computeLetterCount = function() {
 $(document).ready(function() {
 
   $("#tweet-contents").attr("maxlength", maxlength)
+  $("#add-counter").click(function() {
+    console.log("Clicked Add")
 
+  })
+  $("#sub-counter").click(function() {
+    console.log("Clicked Subtract")
+
+  })
+  $("#reset-counter").click(function() {
+    console.log("Clicked Reset")
+
+  })
   $("#save-tweet").click(function() {
     console.log("clicked btn")
 
